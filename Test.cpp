@@ -378,24 +378,6 @@ void destroyShaders()
 	glUseProgram(0);
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 const GLuint vaoNum = 1;
 const GLuint bufferNum = 1;
 GLuint mVao[vaoNum];
