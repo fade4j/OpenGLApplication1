@@ -1,0 +1,17 @@
+﻿  Test.cpp
+e:\visualprojects\openglapplication1\openglapplication1\openglapplication1\bitmap.cpp(235): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(205): note: 参见“fopen”的声明
+e:\visualprojects\openglapplication1\openglapplication1\openglapplication1\bitmap.cpp(400): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(205): note: 参见“fopen”的声明
+e:\visualprojects\openglapplication1\openglapplication1\openglapplication1\test.cpp(143): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(205): note: 参见“fopen”的声明
+e:\visualprojects\openglapplication1\openglapplication1\openglapplication1\test.cpp(487): warning C4305: “参数”: 从“double”到“GLfloat”截断
+e:\visualprojects\openglapplication1\openglapplication1\openglapplication1\test.cpp(488): warning C4305: “参数”: 从“double”到“GLfloat”截断
+e:\visualprojects\openglapplication1\openglapplication1\openglapplication1\test.cpp(489): warning C4305: “参数”: 从“double”到“GLfloat”截断
+e:\visualprojects\openglapplication1\openglapplication1\openglapplication1\test.cpp(509): warning C4305: “参数”: 从“double”到“GLfloat”截断
+e:\visualprojects\openglapplication1\openglapplication1\openglapplication1\test.cpp(510): warning C4305: “参数”: 从“double”到“GLfloat”截断
+e:\visualprojects\openglapplication1\openglapplication1\openglapplication1\test.cpp(511): warning C4305: “参数”: 从“double”到“GLfloat”截断
+e:\visualprojects\openglapplication1\openglapplication1\openglapplication1\test.cpp(519): warning C4305: “初始化”: 从“double”到“GLfloat”截断
+e:\visualprojects\openglapplication1\openglapplication1\openglapplication1\test.cpp(534): warning C4305: “初始化”: 从“double”到“GLfloat”截断
+  OpenGLApplication1.vcxproj -> E:\VisualProjects\OpenGLApplication1\OpenGLApplication1\Debug\OpenGLApplication1.exe
+  OpenGLApplication1.vcxproj -> E:\VisualProjects\OpenGLApplication1\OpenGLApplication1\Debug\OpenGLApplication1.pdb (Full PDB)
