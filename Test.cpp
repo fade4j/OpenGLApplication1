@@ -307,7 +307,7 @@ void createTexture()
 	GLenum type = 0;
 
 	pTxtData = ReadBitmap("zero2.bmp", &width, &height, &bitmapFormat);
-	cout << "width : " << width << " , height£º" << height << endl;
+	//cout << "width : " << width << " , height£º" << height << endl;
 	cerr << pTxtData<<endl;
 	if (pTxtData == NULL)
 	{
