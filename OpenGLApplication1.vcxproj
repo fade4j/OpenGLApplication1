@@ -149,7 +149,7 @@
   <ItemGroup>
     <ClCompile Include="InitGlut.cpp" />
     <ClCompile Include="ShaderUtil.cpp" />
-    <ClCompile Include="Test.cpp" />
+    <ClCompile Include="TextureTestOne.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

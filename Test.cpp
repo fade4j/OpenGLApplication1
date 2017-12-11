@@ -209,17 +209,17 @@ GLfloat transformMatrix[16] =
 };
 void initUniform()
 {
-	locationTransformMatrix = glGetUniformLocation(programHandle, "my_TranformMatrix");// 从Program取出变换矩阵
+	locationTransformMatrix = glGetUniformLocation(programHandle, "my_TransformMatrix");// 从Program取出变换矩阵
 	glUniformMatrix4fv(locationTransformMatrix, 1, GL_FALSE, transformMatrix);
 }
 GLint locationVertices;
 GLint locationTexcoord;
 GLfloat verteices[VERTEX_COUNT][4] =
 {
-	{-0.8f, 0.8f,		0.0f, 1.0f},
-	{0.8f, 0.8f,			1.0f, 1.0f},
-	{-0.8f, -0.8f,		0.0f, 0.0f},
-	{0.8f, -0.8f,		1.0f, 0.0f}
+	{-0.1f, 0.1f,		0.0f, 1.0f},
+	{0.1f, 0.1f,			1.0f, 1.0f},
+	{-0.1f, -0.1f,		0.0f, 0.0f},
+	{0.1f, -0.1f,		1.0f, 0.0f}
 };
 void initVertexAttrib()
 {
@@ -306,7 +306,7 @@ void createTexture()
 	GLenum format = 0;
 	GLenum type = 0;
 
-	pTxtData = ReadBitmap("zero2.bmp", &width, &height, &bitmapFormat);
+	pTxtData = ReadBitmap("zero2_R5G6B5.bmp", &width, &height, &bitmapFormat);
 	//cout << "width : " << width << " , height：" << height << endl;
 	cerr << pTxtData<<endl;
 	if (pTxtData == NULL)
