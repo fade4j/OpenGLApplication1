@@ -1,9 +1,6 @@
 ﻿  TextureTestOne.cpp
-e:\visualprojects\openglapplication1\openglapplication1\openglapplication1\bitmap.cpp(235): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(205): note: 参见“fopen”的声明
-e:\visualprojects\openglapplication1\openglapplication1\openglapplication1\bitmap.cpp(400): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(205): note: 参见“fopen”的声明
-e:\visualprojects\openglapplication1\openglapplication1\openglapplication1\texturetestone.cpp(153): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(205): note: 参见“fopen”的声明
+  ShaderUtil.cpp
+  InitGlut.cpp
+  正在生成代码...
   OpenGLApplication1.vcxproj -> E:\VisualProjects\OpenGLApplication1\OpenGLApplication1\Debug\OpenGLApplication1.exe
   OpenGLApplication1.vcxproj -> E:\VisualProjects\OpenGLApplication1\OpenGLApplication1\Debug\OpenGLApplication1.pdb (Full PDB)

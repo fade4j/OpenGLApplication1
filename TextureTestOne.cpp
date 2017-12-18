@@ -12,24 +12,30 @@ GLfloat transformMatrix[16]=
 	0.0f, 0.0f, 1.0f, 0.0f,
 	0.0f, 0.0f, 0.0f, 1.0f
 };
-
+//{0.5f, -0.5f,   1.0f, 0.0f}
+//{ 0.3f, 0.5f, 1.0f, 0.0f },
+//{ 0.5f, 0.4f,   1.0f, 0.0f },
+//{ 0.7f, 0.8f,   1.0f, 0.0f }
 float vertices[VERTEX_COUNT][4] =
 {
-	{-0.5f, 0.5f,	0.0f, 1.0f},
-	{0.5f, 0.5f,		1.0f, 1.0f},
-	{-0.5f, -0.5f,	0.0f, 0.0f},
-	{0.5f, -0.5f,   1.0f, 0.0f}
+	{-0.5f, -0.5f,	0.0f, 1.0f},
+	{-0.5f, 0.5f,	0.0f, 0.0f},
+	{ 0.5f, 0.5f,   1.0f, 0.0f },
+	{ 0.5f, -0.5f,   1.0f, 0.0f }
 };
 
 GLvoid* bitmap = NULL;
+GLvoid* bitmap2 = NULL;
 GLuint texture = 0;
+GLuint texture2 = 0;
 void loadShaders(char* vShaderFileName, char* fShaderFileName);
 GLint compileShader(char* fileName, GLint shader);
 void getTextureFormat(GLint bitmapFormat, GLenum* format, GLenum* type);
 void renderInit();
 void initUniform();
 void initVertexAttrib();
-void createTexture();
+void readBitmap(const char* bitmapName,GLenum target);
+void createTexture(GLvoid* bitmap, int bitmapFormat, int width, int height,  GLenum target);
 void render();
 int main(int argc, char** argv)
 {
@@ -49,7 +55,7 @@ void render()
 	printf("rendering!!!!");
 	//glBindTexture(GL_TEXTURE_2D, texture);
 	//glBindTexture(GL_TEXTURE_2D, 0);
-	glDrawArrays(GL_TRIANGLE_STRIP, 0, VERTEX_COUNT);
+	glDrawArrays(GL_TRIANGLES, 0, VERTEX_COUNT);
 	glFinish();
 }
 
@@ -57,27 +63,35 @@ void renderInit()
 {
 	initUniform();
 	initVertexAttrib();
-	createTexture();
+	readBitmap( "zero2.bmp", GL_TEXTURE0);
+	readBitmap("zero2_R5G6B5.bmp", GL_TEXTURE1);
+	//createTexture();
 }
 
-void createTexture()
+void readBitmap(const char* bitmapName, GLenum target)
 {
 	GLuint width = 0;
 	GLuint height = 0;
 	int bitmapFormat = 0;
-	bitmap = ReadBitmap("zero2_R5G6B5.bmp", &width, &height, &bitmapFormat);
+	GLvoid* bitmap = ReadBitmap(bitmapName, &width, &height, &bitmapFormat);
 	if (bitmap == NULL)
 	{
 		printf("Texture bitmap is NULL!!!");
 		return;
 	}
 
+	createTexture(bitmap, bitmapFormat, width, height, target);
+}
+
+void createTexture(GLvoid* bitmap, int bitmapFormat, int width, int height, GLenum target)
+{
+	GLuint tex = 0;
 	GLenum format = 0;
 	GLenum type = 0;
 	getTextureFormat(bitmapFormat, &format, &type);
-	glGenTextures(1, &texture);
-	glActiveTexture(GL_TEXTURE0);
-	glBindTexture(GL_TEXTURE_2D, texture);
+	glGenTextures(1, &tex);
+	glActiveTexture(target);
+	glBindTexture(GL_TEXTURE_2D, tex);
 	glTexImage2D(GL_TEXTURE_2D, 0, format, width, height, 0, format, type, bitmap);
 
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
@@ -85,8 +99,9 @@ void createTexture()
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
 
-	int sampler2D = glGetUniformLocation(program, "sampler");
-	glUniform1i(sampler2D, 0);
+	//int sampler2D = glGetUniformLocation(program, "sampler");
+	//glUniform1i(sampler2D, 0);
+	//glSamplerParameterf(sampler2D, GL_REPEAT, 0XFFFFFFFF);
 
 	free(bitmap);
 }
